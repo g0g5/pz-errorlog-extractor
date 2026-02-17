@@ -1,0 +1,23 @@
+=== Project Zomboid Server Log Filter Report ===
+Source: log_example1.txt
+Generated: 2026-02-17 14:19:15
+Total entries found: 4
+
+--- Entry 1 ---
+LOG  : General      f:0, t:1771295066204> Graphics = [AdapterRAM=]
+
+--- Entry 2 ---
+LOG  : General      f:0, t:1771295066486> stderr.encoding=GBK
+
+--- Entry 3 ---
+LOG  : General      f:0, t:1771295231321> ERROR: ItemContainer.AddItem: can't find XY_OF
+
+--- Entry 4 ---
+ERROR: General      f:0, t:1771295231387> ExceptionLogger.logException> Exception thrown
+	zombie.world.WorldDictionaryException: World loading could not proceed, there are script load errors. (Actual error may be printed earlier in log) at IsoWorld.init(IsoWorld.java:2696).
+	Stack trace:
+		zombie.iso.IsoWorld.init(IsoWorld.java:2696)
+		zombie.gameStates.GameLoadingState$1.runInner(GameLoadingState.java:334)
+		zombie.gameStates.GameLoadingState$1.run(GameLoadingState.java:294)
+		java.base/java.lang.Thread.run(Unknown Source)
+

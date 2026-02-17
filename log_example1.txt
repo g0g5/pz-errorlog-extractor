@@ -1,0 +1,93 @@
+LOG  : General      f:0, t:1771295065804> 17-02-2026 10:24:25
+LOG  : General      f:0, t:1771295065883> ===== System specs =====
+LOG  : General      f:0, t:1771295065886> OS: Windows 11, version: 10.0, arch: amd64
+LOG  : General      f:0, t:1771295065887> Processor: AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD
+LOG  : General      f:0, t:1771295065887> Processor cores: 32
+LOG  : General      f:0, t:1771295065888> Available processors (cores): 32
+LOG  : General      f:0, t:1771295065890> Memory free: 438.0 MB
+LOG  : General      f:0, t:1771295065890> Memory max: 8192.0 MB
+LOG  : General      f:0, t:1771295065891> Memory  total available to JVM: 508.0 MB
+LOG  : General      f:0, t:1771295065999> 
+LOG  : General      f:0, t:1771295066001> Mobo = [Product=]
+LOG  : General      f:0, t:1771295066079> 
+LOG  : General      f:0, t:1771295066080> CPU = [Manufacturer=]
+LOG  : General      f:0, t:1771295066203> 
+LOG  : General      f:0, t:1771295066204> Graphics = [AdapterRAM=]
+LOG  : General      f:0, t:1771295066280> 
+LOG  : General      f:0, t:1771295066280> VideoMode = [VideoModeDescription=]
+LOG  : General      f:0, t:1771295066368> 
+LOG  : General      f:0, t:1771295066368> Sound = [Manufacturer=]
+LOG  : General      f:0, t:1771295066465> 
+LOG  : General      f:0, t:1771295066466> Memory RAM = [Capacity=]
+LOG  : General      f:0, t:1771295066467> ------------------------
+LOG  : General      f:0, t:1771295066468> java.specification.version=25
+LOG  : General      f:0, t:1771295066468> sun.cpu.isalist=amd64
+LOG  : General      f:0, t:1771295066469> sun.jnu.encoding=GBK
+LOG  : General      f:0, t:1771295066470> java.vm.vendor=Azul Systems, Inc.
+LOG  : General      f:0, t:1771295066470> sun.arch.data.model=64
+LOG  : General      f:0, t:1771295066471> java.vendor.url=http://www.azul.com/
+LOG  : General      f:0, t:1771295066471> zomboid.steam=1
+LOG  : General      f:0, t:1771295066471> java.vm.specification.version=25
+LOG  : General      f:0, t:1771295066472> os.name=Windows 11
+LOG  : General      f:0, t:1771295066472> zomboid.znetlog=1
+LOG  : General      f:0, t:1771295066473> jdk.debug=release
+LOG  : General      f:0, t:1771295066474> sun.cpu.endian=little
+LOG  : General      f:0, t:1771295066474> java.specification.vendor=Oracle Corporation
+LOG  : General      f:0, t:1771295066474> java.version.date=2025-10-21
+LOG  : General      f:0, t:1771295066475> java.home=F:\SteamLibrary\steamapps\common\Proj...
+LOG  : General      f:0, t:1771295066475> file.separator=\
+LOG  : General      f:0, t:1771295066476> line.separator=
+
+LOG  : General      f:0, t:1771295066476> java.vm.specification.vendor=Oracle Corporation
+LOG  : General      f:0, t:1771295066477> java.specification.name=Java Platform API Specification
+LOG  : General      f:0, t:1771295066478> java.awt.headless=true
+LOG  : General      f:0, t:1771295066478> sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+LOG  : General      f:0, t:1771295066479> java.runtime.version=25.0.1+8-LTS
+LOG  : General      f:0, t:1771295066479> stdout.encoding=GBK
+LOG  : General      f:0, t:1771295066480> os.version=10.0
+LOG  : General      f:0, t:1771295066481> java.runtime.name=OpenJDK Runtime Environment
+LOG  : General      f:0, t:1771295066481> file.encoding=UTF-8
+LOG  : General      f:0, t:1771295066481> java.vm.name=OpenJDK 64-Bit Server VM
+LOG  : General      f:0, t:1771295066482> java.vendor.version=Zulu25.30+17-CA
+LOG  : General      f:0, t:1771295066483> java.vendor.url.bug=http://www.azul.com/support/
+LOG  : General      f:0, t:1771295066483> java.version=25.0.1
+LOG  : General      f:0, t:1771295066484> os.arch=amd64
+LOG  : General      f:0, t:1771295066484> java.vm.specification.name=Java Virtual Machine Specification
+LOG  : General      f:0, t:1771295066484> sun.os.patch.level=
+LOG  : General      f:0, t:1771295066485> native.encoding=GBK
+LOG  : General      f:0, t:1771295066485> java.vm.info=mixed mode, sharing
+LOG  : General      f:0, t:1771295066486> stderr.encoding=GBK
+LOG  : General      f:0, t:1771295066486> java.vendor=Azul Systems, Inc.
+LOG  : General      f:0, t:1771295066487> java.vm.version=25.0.1+8-LTS
+LOG  : General      f:0, t:1771295066487> stdin.encoding=GBK
+LOG  : General      f:0, t:1771295066488> sun.io.unicode.encoding=UnicodeLittle
+LOG  : General      f:0, t:1771295066488> java.class.version=69.0
+LOG  : General      f:0, t:1771295066488> -----
+LOG  : General      f:0, t:1771295066534> version=42.14.0 c8b34f5109602c992d3e3e09d5baf62fa0c61ef5 2026-02-16 14:46:41 (ZB) demo=false
+LOG  : General      f:0, t:1771295066534> branch=main revision=c8b34f5109602c992d3e3e09d5baf62fa0c61ef5 date=2026-02-16 time=14:46:41 pzbullet=1.0.0.26 (ZB)
+LOG  : General      f:0, t:1771295225388> WorldStreamer.create() start
+LOG  : General      f:0, t:1771295225391> WorldStreamer.create() end
+LOG  : General      f:0, t:1771295225391> CellLoader.LoadCellBinaryChunk start
+LOG  : General      f:0, t:1771295225398> CellLoader.LoadCellBinaryChunk start
+LOG  : General      f:0, t:1771295225399> MapItem.LoadWorldMap() start
+LOG  : General      f:0, t:1771295225400> MapItem.LoadWorldMap() start
+LOG  : General      f:0, t:1771295225400> WorldStreamer.isBusy() loop start
+LOG  : General      f:0, t:1771295226606> WorldStreamer.isBusy() loop end
+LOG  : General      f:0, t:1771295231311> Recipe AutoLearned AnySkills - SewHideWallet
+LOG  : General      f:0, t:1771295231321> ERROR: ItemContainer.AddItem: can't find XY_OF
+LOG  : General      f:0, t:1771295231371> MetaTracker.load() start
+LOG  : General      f:0, t:1771295231373> MetaTracker.load() end
+ERROR: General      f:0, t:1771295231387> ExceptionLogger.logException> Exception thrown
+	zombie.world.WorldDictionaryException: World loading could not proceed, there are script load errors. (Actual error may be printed earlier in log) at IsoWorld.init(IsoWorld.java:2696).
+	Stack trace:
+		zombie.iso.IsoWorld.init(IsoWorld.java:2696)
+		zombie.gameStates.GameLoadingState$1.runInner(GameLoadingState.java:334)
+		zombie.gameStates.GameLoadingState$1.run(GameLoadingState.java:294)
+		java.base/java.lang.Thread.run(Unknown Source)
+LOG  : Lua          f:0, t:1771295231418> LuaEventManager: adding unknown event "OnPreUIDraw"
+LOG  : Lua          f:0, t:1771295231418> LuaEventManager: adding unknown event "OnPostUIDraw"
+LOG  : Lua          f:0, t:1771295245502> LuaEventManager: adding unknown event "OnMouseDown"
+LOG  : Lua          f:0, t:1771295245502> LuaEventManager: adding unknown event "OnKeyStartPressed"
+LOG  : Lua          f:0, t:1771295245502> LuaEventManager: adding unknown event "OnKeyPressed"
+LOG  : Lua          f:0, t:1771295245537> LuaEventManager: adding unknown event "OnKeyKeepPressed"
+LOG  : Lua          f:0, t:1771295245563> LuaEventManager: adding unknown event "OnMouseUp"
