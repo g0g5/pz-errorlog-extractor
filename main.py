@@ -92,24 +92,78 @@ def should_include_entry(entry: dict, additional_keywords: list[str] | None = No
     return False
 
 
+def extract_timestamp_and_body(content: str) -> tuple[str | None, str]:
+    """
+    Extract timestamp and message body from entry content.
+
+    Pattern: f:<number>, t:<timestamp>> or just t:<timestamp>>
+    Returns (timestamp, body_without_timestamp)
+    """
+    # Pattern to match timestamp like "f:0, t:1771295104050>" or just "t:1771295104050>"
+    timestamp_pattern = re.compile(r'^(LOG|WARN|ERROR)\s*:\s*\S+\s+(f:\d+,\s*)?t:(\d+)>(.*)$', re.MULTILINE)
+
+    # Check first line for timestamp
+    lines = content.split('\n', 1)
+    first_line = lines[0] if lines else ''
+    rest = lines[1] if len(lines) > 1 else ''
+
+    match = timestamp_pattern.match(first_line)
+    if match:
+        timestamp = match.group(3)
+        # Reconstruct the body: type + category + rest of message (without timestamp)
+        entry_type = match.group(1)
+        # Extract category (the word after type, before f: or t:)
+        category_match = re.match(r'^(LOG|WARN|ERROR)\s*:\s*(\S+)\s+', first_line)
+        category = category_match.group(2) if category_match else ''
+        message_rest = match.group(4)
+
+        # Build body without timestamp
+        body_first_line = f"{entry_type} : {category}{message_rest}"
+        body = body_first_line + ('\n' + rest if rest else '')
+        return timestamp, body.strip()
+
+    return None, content.strip()
+
+
 def deduplicate_entries(entries: list[dict]) -> list[dict]:
     """
-    Remove duplicate entries based on content (after stripping whitespace).
+    Remove duplicate entries based on message body (excluding timestamp).
     Returns a list of unique entries preserving original order.
+    Each entry has 'timestamps' list containing all timestamps for duplicates.
     """
-    seen = set()
-    unique_entries = []
+    body_to_entry: dict[str, dict] = {}
 
     for entry in entries:
-        # Normalize content for deduplication
-        clean_content = entry['content'].strip()
+        timestamp, body = extract_timestamp_and_body(entry['content'])
 
-        if clean_content not in seen:
-            seen.add(clean_content)
-            entry['clean_content'] = clean_content
-            unique_entries.append(entry)
+        if body not in body_to_entry:
+            # First occurrence - create new entry
+            body_to_entry[body] = {
+                'type': entry['type'],
+                'content': entry['content'],
+                'body': body,
+                'timestamps': [timestamp] if timestamp else [],
+                'first_index': len(body_to_entry)  # Preserve order
+            }
+        else:
+            # Duplicate - add timestamp to existing entry
+            if timestamp:
+                body_to_entry[body]['timestamps'].append(timestamp)
 
+    # Convert dict back to list, preserving original order
+    unique_entries = sorted(body_to_entry.values(), key=lambda x: x['first_index'])
     return unique_entries
+
+
+def format_timestamp_range(timestamps: list[str]) -> str:
+    """Format timestamp list as range or single timestamp."""
+    if not timestamps:
+        return "N/A"
+    if len(timestamps) == 1:
+        return timestamps[0]
+    # Sort timestamps numerically
+    sorted_ts = sorted(timestamps, key=int)
+    return f"{sorted_ts[0]} ~ {sorted_ts[-1]} (x{len(timestamps)})"
 
 
 def generate_report(
@@ -125,15 +179,19 @@ def generate_report(
         f.write('=== Project Zomboid Server Log Filter Report ===\n')
         f.write(f'Source: {source_filename}\n')
         f.write(f'Generated: {timestamp}\n')
-        f.write(f'Total entries found: {len(entries)}\n')
+        f.write(f'Unique entries found: {len(entries)}\n')
         f.write('\n')
 
         # Write each entry
         for i, entry in enumerate(entries, 1):
             f.write(f'--- Entry {i} ---\n')
-            f.write(entry['content'])
+            # Write timestamp range
+            ts_range = format_timestamp_range(entry.get('timestamps', []))
+            f.write(f'Timestamp: {ts_range}\n')
+            # Write the body (message without timestamp)
+            f.write(entry['body'])
             # Ensure entry ends with a newline
-            if not entry['content'].endswith('\n'):
+            if not entry['body'].endswith('\n'):
                 f.write('\n')
             f.write('\n')
 
